@@ -9,10 +9,13 @@ makebubble = () => {
 
 var timer = 3;
 function runTimer() {
-  setInterval(function () {
+  var timerFn = setInterval(function () {
     if (timer > 0) {
       timer--;
       document.querySelector("#timerval").textContent = timer;
+    }
+    else{
+        clearInterval(timerFn);
     }
   }, 1000);
 }
