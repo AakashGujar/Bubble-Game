@@ -103,3 +103,8 @@ html,body{
     color: #3e5a3e;
     font-weight: 900;
 }
+
+#gameover-container{
+    display: flex;
+    flex-direction: column;
+}

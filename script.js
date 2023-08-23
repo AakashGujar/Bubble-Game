@@ -1,4 +1,4 @@
-var timer = 60;
+var timer = 0;
 var score = 0;
 var hitrn = 0;
 
@@ -22,7 +22,10 @@ function runTimer() {
       }
     } else {
       clearInterval(timerFn);
-      document.getElementById("pbot").innerHTML = `<h1 id="gameover">Game Over<\h1>`;
+      document.getElementById("pbot").innerHTML = 
+      `<div id="gameover-container">
+       <h1 id="gameover">Game Over</h1>
+     </div>`;
     }
   }, 1000);
 }
