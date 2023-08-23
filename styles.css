@@ -78,6 +78,7 @@ html,body{
     justify-content: center;
     align-items: center;
     gap: 10px;
+    padding: 15px;
 }
 
 .bubble{
@@ -96,4 +97,9 @@ html,body{
     background-color: #678b67;
     cursor: pointer;
     transform: rotate(360deg);
+}
+
+#gameover{
+    color: #3e5a3e;
+    font-weight: 900;
 }

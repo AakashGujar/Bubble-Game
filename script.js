@@ -1,8 +1,15 @@
-var timer = 60;
+var timer = 5;
+var score = 0;
+var hitrn = 0;
+
+function increaseScore() {
+  score += 10;
+  document.getElementById("scoreval").textContent = score;
+}
 
 function getNewHiT() {
-  var rn = Math.floor(Math.random() * 10);
-  document.getElementById("hitval").textContent = rn
+  hitrn = Math.floor(Math.random() * 10);
+  document.getElementById("hitval").textContent = hitrn;
 }
 
 function runTimer() {
@@ -15,6 +22,7 @@ function runTimer() {
       }
     } else {
       clearInterval(timerFn);
+      document.getElementById("pbot").innerHTML = `<h1 id="gameover">Game Over<\h1>`;
     }
   }, 1000);
 }
@@ -26,8 +34,16 @@ function makebubble() {
     a += `<div class="bubble">${rn}</div>`;
   }
   document.querySelector("#pbot").innerHTML = a;
-};
+}
 
+document.getElementById("pbot").addEventListener("click", function (details) {
+  var clickednum = Number(details.target.textContent);
+  if (clickednum === hitrn) {
+    increaseScore();
+    makebubble();
+    getNewHiT();
+  }
+});
 
 getNewHiT();
 runTimer();
